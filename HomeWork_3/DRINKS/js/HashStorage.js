@@ -2,20 +2,20 @@
 function HashStorage() {
     let keys,
         self=this;
-    self.addValue=function(key,value) {self[key]=value; return self;/*работает, добавление в хэш */
+    self.drinks = {};
+    self.addValue=function(key,value) {self.drinks[key]=value; return self.drinks;/*работает, добавление в хэш */
     };
-    self.getValue=function(key) { return self[key]; /*работает, вывод занчения по ключу*/
+    self.getValue=function(key) { return self.drinks[key]; /*работает, вывод занчения по ключу*/
     };
-    self.deleteValue=function(key) {if(self[key]===undefined){
+    self.deleteValue=function(key) {if(self.drinks[key]===undefined){
                                         return false                                        }
-                                    else {self[key]=delete self[key]; return true;}   /* удаление значения по ключу*/
+                                    else {self.drinks[key]=delete self.drinks[key]; return true;}   /* удаление значения по ключу*/
     };
-    self.getKeys=function() {keys=Object.keys(self); return keys;/*работает, вывод ключей*/
+    self.getKeys=function() {keys=Object.keys(self.drinks); return keys;/*работает, вывод ключей*/
     }
 }
 
-let
-    drinkStorage=new HashStorage(),
+   let drinkStorage=new HashStorage(),
     NameOfDrink,
     Alkohol,
     Recipe;
