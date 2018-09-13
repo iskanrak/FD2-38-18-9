@@ -1,9 +1,8 @@
 //угол стрелок постоянно рассчитывается исходя из текущего времени
-window.addEventListener('load', drawClock(), false);//запускаем функцию после загрузки элементов
-
+window.addEventListener('load', drawClock(), false);//запускаем функцию после загрузки
 // функция часов целиком
 function drawClock(){
-let watch, watchArray=['watch','watch_SecondHand','watch_MinuteHand','watch_HourHand','watch_DigitalClock'];
+let watch, Hand, watchArray=['watch','watch_SecondHand','watch_MinuteHand','watch_HourHand','watch_DigitalClock'];
 
     //создание циферблата и стрелок
     for (let i=0; i<watchArray.length; i++)
@@ -13,10 +12,10 @@ let watch, watchArray=['watch','watch_SecondHand','watch_MinuteHand','watch_Hour
             document.body.appendChild(watch);
         }
         else{
-            a=watchArray[i];
-                a=document.createElement('div');
-            a.className=watchArray[i];
-            watch.appendChild(a);
+            Hand=watchArray[i];
+            Hand=document.createElement('div');
+            Hand.className=watchArray[i];
+            watch.appendChild(Hand);
         }
 
     //создание цифр циферблата
